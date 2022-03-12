@@ -1,0 +1,55 @@
+#+TITLE: Terminator config
+#+AUTHOR: Andrzej Krawiec
+#+PROPERTY: header-args :tangle "~/.config/terminator/config" :cache no
+
+* Prerequisites
+** Terminator
+- Terminal emulator
+- Can be installed from almost every package manager
+#+begin_example
+sudo pacman -Sy terminator
+#+end_example
+** Fonts
+JetBrainsMono fonts can be install from almost every package manager.
+#+begin_example
+sudo pacman -Sy ttf-jetbrains-mono
+#+end_example
+
+* Global config
+#+begin_src shell
+[global_config]
+  handle_size = 4
+  window_state = maximise
+  borderless = True
+  use_custom_url_handler = True
+  title_hide_sizetext = True
+  title_font = JetBrains Mono NL Medium 16
+  line_height = 1.1
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = JetBrains Mono NL Medium 16
+    show_titlebar = False
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:32
+      maximised = True
+      fullscreen = False
+      size = 1920, 1011
+      last_active_term = 2b949c66-7668-4240-b30a-5765e4ddc512
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = 2b949c66-7668-4240-b30a-5765e4ddc512
+#+end_src
