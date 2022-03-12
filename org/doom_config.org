@@ -1,0 +1,70 @@
+#+TITLE: Doom Config
+#+AUTHOR: Andrzej Krawiec
+#+PROPERTY: header-args :tangle "~/.doom.d/config.el" :cache no
+
+* Prerequisites
+** Fonts
+JetBrainsMono fonts can be install from almost every package manager.
+#+begin_example
+sudo pacman -Sy ttf-jetbrains-mono
+#+end_example
+
+* Identifier
+Some functionality uses this to identify you, e.g. GPG configuration, email
+clients, file templates and snippets. It is optional.
+#+begin_src emacs-lisp
+(setq user-full-name "Andrzej Krawiec"
+      user-mail-address "andkrawiec@gmail.com")
+#+end_src
+
+* Theme
+#+begin_src emacs-lisp
+(setq doom-theme 'doom-ir-black)
+#+end_src
+
+* Font
+JetBrainsMono are likely not installed on your system by default (check Prerequisites)
+#+begin_src emacs-lisp
+(setq doom-font (font-spec :family "JetBrainsMono" :size 16)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono" :size 19))
+#+end_src
+
+* Org-mode
+#+begin_src emacs-lisp
+(setq org-directory "~/org/")
+#+end_src
+
+* Line numbers
+| Type      | Description           |
+|-----------+-----------------------|
+| t         | Default line numbers  |
+| 'relative | Relative line numbers |
+| nil       | Line numbers disabled |
+#+begin_src emacs-lisp
+(setq display-line-numbers-type 'relative)
+#+end_src
+
+* Fallback
+If 'somenting went wrong'
+#+begin_src emacs-lisp
+(setq doom-fallback-buffer "*dashboard*")
+#+end_src
+
+* Packages
+** Shell
+#+begin_src emacs-lisp
+(setq eshell-history-size 5000
+      eshell-buffer-maximum-lines 5000
+      eshell-hist-ignoredups t
+      eshell-scroll-to-bottom-on-input t
+      eshell-destroy-buffer-when-process-dies t
+      eshell-visual-commands'("bash" "fish" "htop" "ssh" "top" "zsh"))
+(map! :leader
+      :desc "Eshell"               "e s"  #'eshell
+      :desc "Eshell popup toggle"  "e t"  #'+eshell/toggle)
+#+end_src
+** Beacon
+Never lose your cursor
+#+begin_src emacs-lisp
+(beacon-mode 1)
+#+end_src

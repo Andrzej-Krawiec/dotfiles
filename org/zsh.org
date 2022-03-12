@@ -1,6 +1,6 @@
 #+TITLE: Zsh config
 #+AUTHOR: Andrzej Krawiec
-#+PROPERTY: header-args :tangle "../.zshrc" :cache no
+#+PROPERTY: header-args :tangle "~/.zshrc" :cache no
 
 * Prerequisites
 ** Oh-My-Zsh
