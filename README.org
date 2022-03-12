@@ -1,0 +1,4 @@
+#+TITLE: Readme
+#+AUTHOR: Andrzej Krawiec
+
+All config files are generated from `*.org` files (stored in `org` directory) using Emacs [[https://orgmode.org/worg/org-contrib/babel/][Babel]]
