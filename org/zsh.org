@@ -62,7 +62,7 @@ plugins=(
 #+end_src
 
 * Oh-My-Zsh
-Source our oh-my-zsh config
+OMZ FTW :rocket:
 #+begin_src shell
 source $ZSH/oh-my-zsh.sh
 #+end_src
